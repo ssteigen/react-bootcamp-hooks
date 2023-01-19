@@ -4,7 +4,7 @@ import { List } from "@material-ui/core";
 import Todo from "./Todo";
 
 function TodoList({ todos, removeTodo, toggleTodo, editTodo }) {
-  if (!todos.length) return null;
+  if (!todos || !todos.length) return null;
 
   return (
     <Paper>
@@ -12,10 +12,8 @@ function TodoList({ todos, removeTodo, toggleTodo, editTodo }) {
         {todos.map((todo, i) => (
           <>
             <Todo
-              id={todo.id}
+              {...todo}
               key={todo.id}
-              task={todo.task}
-              completed={todo.completed}
               removeTodo={removeTodo}
               toggleTodo={toggleTodo}
               editTodo={editTodo}
