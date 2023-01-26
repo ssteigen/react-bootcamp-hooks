@@ -6,7 +6,6 @@ import { Toolbar } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import TodoList from "./TodoList";
 import TodoForm from "./TodoForm";
-import useTodoState from "./hooks/useTodoState";
 
 import { TodosProvider } from "./contexts/todos.context";
 
@@ -39,15 +38,3 @@ function TodoApp() {
 }
 
 export default TodoApp;
-
-/**
- * Todo App
- * - TodoForm
- * - TodoList
- * - - TodoItem
- */
-
-/**
- * Tasks are made of
- * id, task, completed
- */
