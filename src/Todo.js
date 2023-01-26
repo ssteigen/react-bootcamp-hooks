@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import {
   Checkbox,
   ListItem,
@@ -15,6 +15,7 @@ function Todo({ id, task, completed }) {
   const dispatch = useContext(DispatchContext);
 
   const [isEditing, toggle] = useToggle();
+  console.log("TODO RE-RENDER: ", task);
 
   return (
     <ListItem style={{ height: "64px" }}>
@@ -46,4 +47,4 @@ function Todo({ id, task, completed }) {
   );
 }
 
-export default Todo;
+export default memo(Todo);
